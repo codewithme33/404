@@ -1,22 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+/* import './Navbar.css'; */
 
-function CustomNavbar() {
+const Navbar = () => {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">MediDiagnose</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#signup">Sign Up</Nav.Link>
-            <Nav.Link href="#login">Login</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="navbar">
+      <h1>MediDiagnose</h1>
+    </nav>
   );
-}
+};
 
-export default CustomNavbar;
+export default Navbar;
