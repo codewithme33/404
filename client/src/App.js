@@ -59,8 +59,8 @@ function App() {
         <Description />
       </div>
       <Footer />
-
     </div>
   );
 }
 
+export default App;
