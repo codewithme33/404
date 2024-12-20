@@ -1,29 +1,22 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-
-const cors = require("cors");
-
-dotenv.config();
+const express = require('express');
+const mongoose = require('mongoose');
+const diseaseRoutes = require('./routes/disease.js');
 
 const app = express();
-
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(cors());
-
-mongoose.connect(process.env.MONGODB_STRING);
-
-let db = mongoose.connection;
-db.on("error", console.error.bind(console, "Error in the database connection!"));
-db.once("open", ()=> console.log("Now connected to MongoDB Atlas."));
 
 
+mongoose.connect('mongodb+srv://codewithme33:rightnow@cluster0.kwn0r.mongodb.net/MediDiagnose?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to MongoDB"))
+.catch((err) => console.error("Error connecting to MongoDB:", err));
 
-if(require.main === module){
-    app.listen(process.env.PORT || 3000, ()=> {
-        console.log(`API is now running at port ${process.env.PORT || 3000}`);
-	})
-	};
 
-module.exports = { app, mongoose};
+app.use('/api/diseases', diseaseRoutes);
+
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

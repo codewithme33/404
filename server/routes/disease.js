@@ -1,7 +1,8 @@
 const express = require('express');
+const { predictDisease } = require('../controllers/disease.js');
 const router = express.Router();
-const diseaseController = require('../controllers/disease.js'); 
 
-router.post('/findDisease', diseaseController.findDiseaseBySymptoms);
+router.post('/predict', predictDisease);  
+
 
 module.exports = router;
