@@ -1,0 +1,23 @@
+.navbar {
+    background-color: lightblue; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    height: 40px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+
+.navbar h6 {
+    font-family: cursive; 
+    font-weight: bold; 
+    font-size: 1.5rem; 
+    color: #27285c; 
+    text-transform: lowercase; 
+    letter-spacing: 2px; 
+  }
+
+  .navbar h6 .capital-letters {
+    text-transform: uppercase; 
+  }
