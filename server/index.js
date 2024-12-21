@@ -5,6 +5,9 @@ const diseaseRoutes = require('./routes/disease.js');
 const app = express();
 app.use(express.json());
 
+const cors = require("cors");
+app.use(cors());
+
 
 mongoose.connect('mongodb+srv://codewithme33:rightnow@cluster0.kwn0r.mongodb.net/MediDiagnose?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
