@@ -7,6 +7,8 @@ const SearchBar = () => {
 
   const handleSearch = async () => {
     try {
+      console.log("Sending symptoms:", input); // Debugging: Log input symptoms
+
       const response = await fetch("http://127.0.0.1:5000/predict", {
         method: "POST",
         headers: {
@@ -15,14 +17,23 @@ const SearchBar = () => {
         body: JSON.stringify({ symptoms: input }), // Pass the symptoms as input
       });
 
+      console.log("Server Response Status:", response.status); // Debugging: Log response status
+
       if (!response.ok) {
         throw new Error("Failed to fetch data from the server.");
       }
 
       const data = await response.json();
-      setResult(data);
-      setError(null); // Clear any previous errors
+      console.log("Server Response Data:", data); // Debugging: Log fetched data
+
+      if (data.disease && data.treatment) {
+        setResult(data);
+        setError(null); // Clear any previous errors
+      } else {
+        throw new Error("Unexpected response structure.");
+      }
     } catch (err) {
+      console.error("Error occurred:", err); // Debugging: Log error
       setError("Could not fetch results. Please try again.");
       setResult(null);
     }
@@ -61,7 +72,9 @@ const SearchBar = () => {
       {result && (
         <div style={{ marginTop: "20px", textAlign: "left" }}>
           <h3>You might be suffering from:</h3>
-          <p><strong>{result.disease}</strong></p>
+          <p>
+            <strong>{result.disease}</strong>
+          </p>
           <h4>Recommended Treatment:</h4>
           <p>{result.treatment}</p>
         </div>

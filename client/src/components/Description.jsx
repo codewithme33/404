@@ -1,5 +1,4 @@
-import React from 'react';
-/* import './Description.css'; */
+import React from "react";
 
 const Description = ({ onCheckSymptomsClick }) => {
   return (
