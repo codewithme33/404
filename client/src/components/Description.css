@@ -1,0 +1,24 @@
+.description {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .description h2 {
+    font-size: 36px;
+    font-family: 'Georgia', serif;
+    margin-top: 20px;
+    color: #27285c;
+  }
+  
+  .description p {
+    font-size: 18px;
+    font-family: 'Roboto', Libre Baskerville;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    word-spacing: 1.5px;
+    color: #555;
+    margin-top: 30px;
+  }
+  
+  

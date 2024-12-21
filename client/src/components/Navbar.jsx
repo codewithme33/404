@@ -1,10 +1,12 @@
 import React from 'react';
-/* import './Navbar.css'; */
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>MediDiagnose</h1>
+      <h6>
+        <span className="capital-letters">M</span>edi<span className="capital-letters">D</span>iagnose
+      </h6>
     </nav>
   );
 };

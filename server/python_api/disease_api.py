@@ -10,7 +10,6 @@ encoder = joblib.load('../models/label_encoder.pkl')
 data = pd.read_csv('../models/Diseases_Symptoms.csv')
 
 app = Flask(__name__)
-CORS(app) 
 
 @app.route('/predict', methods=['POST'])
 def predict_disease():

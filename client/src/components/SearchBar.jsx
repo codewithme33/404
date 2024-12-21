@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './SearchBar.css';
 
 const SearchBar = () => {
   const [input, setInput] = useState("");
@@ -48,7 +49,7 @@ const SearchBar = () => {
         style={{
           padding: "10px 20px",
           fontSize: "16px",
-          backgroundColor: "#007bff",
+          backgroundColor: "#27285c",
           color: "#fff",
           border: "none",
           cursor: "pointer",
